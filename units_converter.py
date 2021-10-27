@@ -5,4 +5,4 @@ def converter_Grey_rad(observ):
     
     
 observ = input().split()
-print(converter_Grey_rad(observ), "рад")
+print(converter_Grey_rad(observ),"рад")
