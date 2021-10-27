@@ -1,5 +1,3 @@
-
-
 def converter_Grey_rad(observ):
     if observ[1] == "Гр":
         rad = int(observ[0])*100
