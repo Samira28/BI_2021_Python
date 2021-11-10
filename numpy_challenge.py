@@ -6,13 +6,13 @@ array3 = np.linspace(1, 3, 3)
 array1, array2, array3
 
 
-def matrix_multiplication(a,b):
+def matrix_multiplication(a, b):
     result = np.matmul(a, b)
     return result
 '''
 a = np.matrix('1 2; 3 4')
 b = np.matrix('1 1; 1 1')
-print(matrix_multiplication(a,b))
+print(matrix_multiplication(a, b))
 '''
 def multiplication_check(array):
     i = 0
