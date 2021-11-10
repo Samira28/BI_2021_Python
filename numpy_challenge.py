@@ -9,8 +9,6 @@ array3 = np.linspace(1, 3, 3)
 def matrix_multiplication(a, b):
 
     result = np.matmul(a, b)
-
-
     return result
 
 
@@ -29,7 +27,6 @@ def multiply_matrices(array):
 
     if multiplication_check(array):
             A = array[0]
-
 
             for i in range(1, len(array)):
                 B = array[i]
@@ -57,7 +54,5 @@ def compute_pair_distances(coor):
     dist = np.zeros((n_coor, n_coor))
     row, col = np.triu_indices(n_coor, 1)
 
-
     dist = np.sqrt(((coor[:, None, :] - coor) ** 2).sum(-1))
     return dist
-
