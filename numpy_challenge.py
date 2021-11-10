@@ -3,8 +3,6 @@ import numpy as np
 array1 = np.arange(1, 4, 1)
 array2 = np.array([1, 2, 3])
 array3 = np.linspace(1, 3, 3)
-array1, array2, array3
-
 
 def matrix_multiplication(a, b):
     result = np.matmul(a, b)
