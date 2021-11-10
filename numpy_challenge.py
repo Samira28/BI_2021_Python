@@ -27,7 +27,6 @@ def multiply_matrices(array):
 
     if multiplication_check(array):
             A = array[0]
-
             for i in range(1, len(array)):
                 B = array[i]
                 A = np.dot(A, B)
