@@ -1,0 +1,80 @@
+import sys
+
+
+
+
+length_min = 0
+gc_min = 0
+gc_max = 100
+output_name = ''
+save_filtered = False
+
+def num(input):
+    try:
+        float(input)
+        return True
+    except ValueError:
+        return False
+
+if len(sys.argv) == 2:
+    file_name = sys.argv[1]
+else:
+    i = 1
+    while i < len(sys.argv) - 1:
+        if sys.argv[i] == '--min_length':
+            length_min = sys.argv[i+1]
+            i += 2
+        elif sys.argv[i] == '--save_filtered':
+            save_filtered = True
+            i += 1
+        elif sys.argv[i] == '--gc_bounds':
+            if num(sys.argv[i+1]):
+                gc_min = float(sys.argv[i+1])
+                if num(sys.argv[i+2]):
+                    gc_max = float(sys.argv[i+2])
+                    i += 3
+                else:
+                    i += 2
+            else:
+                i += 1
+        elif sys.argv[i] == '--output_name':
+            output_name = sys.argv[i+1]
+            i += 2
+    file_name = sys.argv[len(sys.argv) - 1]
+if output_name == '':
+    file_name_list = [x for x in file_name]
+    output_name = ''.join(file_name_list[0: len(file_name_list) - 6])
+
+
+if save_filtered == True:
+    filtered = output_name + '_failed.fastq'
+    filtered_reads = open(filtered, 'a')
+
+passed = output_name + '_passed.fastq'
+passed_reads = open(passed, 'a')
+
+with open(file_name) as fastq:
+    length = -1
+    while Length != 0:
+        name = fastq.readline()
+        sequence = fastq.readline().strip()
+        GC_total = sequence.count('G') + sequence.count('C')
+        quality = fastq.readline().strip()
+        length = len(sequence)
+        if length != 0:
+            GC_cont = (GC_total/length) * 100
+            if gc_max >= GC_cont >= gc_min and length >= int(length_min):
+                passed_reads.writelines(name)
+                passed_reads.writelines(sequence+'\n')
+                passed_reads.writelines(comment+'\n')
+                passed_reads.writelines(quality+'\n')
+            else:
+                if save_filtered == True:
+                    filtered_reads.writelines(name)
+                    filtered_reads.writelines(sequence+'\n')
+                    filtered_reads.writelines(quality+'\n')
+
+passed_reads.close()
+if save_filtered == True:
+    filtered_reads.close()
+
