@@ -1,3 +1,29 @@
-# BI_2021_Python
-It was created to share and discuss my homework with teacher. Also, it will help me to collaborate with other members in the future projects.
+# INSTRUCTIONS
+To run pain.py follow the following commands:
+
+## Requirements:
+macOS Catalina: 10.15.7 \
+Python version: 3.9 >
+
+## Make an environment
+
+```
+python3 -m pip install virtualenv
+```
+
+## Name new environment and activate new environment
+
+```
+python3.9 -m venv homework
+
+source pain/bin/activate
+```
+
+## Install libraries, so you can run the script pain.py
+
+```
+pip install -r requirements.txt
+
+python3 pain.py
+```
 
