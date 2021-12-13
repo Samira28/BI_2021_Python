@@ -14,6 +14,7 @@ args = parser.parse_args()
 
 def w(file):
 
+
     file = sys.stdin
     words = 0
     for line in file:
@@ -22,6 +23,7 @@ def w(file):
 
 def lines_count(file):
 
+
     file = sys.stdin
     lines = 0
     for line in file:
@@ -29,6 +31,7 @@ def lines_count(file):
     print(lines)
 
 def length_count(file):
+
 
     file = sys.stdin
     length = 0
