@@ -12,7 +12,7 @@ file = args.infile
 if file == "-":
     file = sys.stdin
     lines = []
-    for line in sys.stdin:
+    for line in file:
         lines.append(line)
 
     ans = "\n".join(sorted(lines))
