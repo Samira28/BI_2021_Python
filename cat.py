@@ -2,6 +2,17 @@
 # !source env/bin/activate
 
 import sys
+import argparse
 
-for line in sys.stdin:
-    print(line)
+parser.add_argument('infile', metavar = 'FILE', nargs = "?", help = 'input file', default='-')
+
+args = parser.parse_args()
+
+file = args.infile
+if file == "-":
+    for line in file:
+        print(line)
+else:
+    with open(file, "r") as f:
+        for line in f:
+            print(line)
