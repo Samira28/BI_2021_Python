@@ -44,13 +44,13 @@ def length_count(file):
         length += len(list(line))
     print(length)
 
-if args.words :
+if args.words:
     file = sys.stdin
     w(file)
-elif args.lines :
+elif args.lines:
     file = sys.stdin
     lines_count(file)
-elif args.length :
+elif args.length:
     file = sys.stdin
     length_count(file)
 else:
