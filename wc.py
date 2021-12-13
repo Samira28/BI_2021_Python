@@ -18,6 +18,8 @@ def w(file):
 
 
     words = 0
+
+
     for line in file:
         words += len(line.split())
     print(words)
@@ -28,6 +30,8 @@ def lines_count(file):
 
 
     lines = 0
+
+
     for line in file:
         lines += 1
     print(lines)
@@ -38,24 +42,20 @@ def length_count(file):
 
 
     length = 0
+
+
     for line in file:
         length += len(list(line))
     print(length)
 
 if args.words:
     file = sys.stdin
-
-
     w(file)
 elif args.lines:
     file = sys.stdin
-
-
     lines_count(file)
 elif args.length:
     file = sys.stdin
-
-
     length_count(file)
 else:
     print("Choose action : -w, -l, -c")
