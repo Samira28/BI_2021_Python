@@ -1,8 +1,7 @@
 #!/usr/bin/env python
-#!source env/bin/activate
+# !source env/bin/activate
 
 import os
-import sys
 import argparse
 
 parser = argparse.ArgumentParser()
